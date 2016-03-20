@@ -1,0 +1,234 @@
+@import "foundation/settings";
+@import "foundation";
+@import "../slick/slick";
+@import "../slick/slick-theme";
+@import "hover";
+@mixin Primaryfont {
+//    font-family: 'Oswald', sans-serif;
+}
+
+.fullwidth {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: initial;
+}
+
+* {
+    transition: all ease-in-out 0.4s;
+}
+
+//NAVIGATION
+@media only screen and (min-width: 40.063em) {
+    .logo-wrapper {
+        position: relative;
+    }
+    .logo-wrapper .logo {
+        width: 92px;
+        height: 92px;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        top: -2px;
+        margin-left: -46px;
+    }
+    // Right part
+    .top-bar-section ul.right {
+        width: 50%;
+        padding-left: 60px;
+    }
+    .top-bar-section ul.right li {
+        float: left;
+    }
+    // Left part
+    .top-bar-section ul.left {
+        width: 50%;
+        padding-right: 60px;
+    }
+    .top-bar-section ul.left li {
+        float: right;
+    }
+}
+
+header {
+    height: 700px;
+    position: relative;
+    background-image: url(/img/headerBG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    -webkit-background-image: url(/img/headerBG.jpg);
+    @media #{$small-only} {
+        background-image: url(/img/contact_img_small.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .mainlogo {
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        background-image: url(/img/STNCLD.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        top: 50%;
+        margin-top: -50px;
+        @media #{$small-only} {
+            background-image: url(/img/STCLD%20WHITE.png);
+        }
+    }
+}
+
+.about {
+    margin: 60px 0 60px 0;
+    #bahasa {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #inggris {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #anggota {
+        margin-bottom: 20px;
+    }
+    h1 {
+        @include Primaryfont;
+    }
+}
+
+.gallery {
+    margin-bottom: 60px;
+    h1 {
+        @include Primaryfont;
+    }
+    #gallery_quote {
+        padding-left: 200px;
+        padding-right: 200px;
+        @media #{$small-only} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .orbit {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.work {
+    margin-bottom: 60px;
+    h1 {
+        @include Primaryfont;
+    }
+    .img-container {
+        position: relative;
+        overflow: hidden;
+        .img-vid {
+            overflow: hidden;
+            transform: scale(1);
+            transition: all ease 1s;
+            filter: grayscale(100%);
+            &:hover {
+                filter: grayscale(0);
+            }
+            &:hover .play-btn {
+                opacity: 0.75;
+            }
+            .play-btn {
+                transition: all ease 1s;
+                position: absolute;
+                top: 30%;
+                left: 10%;
+                width: 80%;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.client {
+    h1 {
+        @include Primaryfont;
+    }
+    img {
+        transition: all ease 1s;
+        width: 50%;
+        filter: grayscale(100%);
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+    margin-bottom: 50px;
+    @media #{$small-only} {
+        margin-bottom: 15px;
+        img {
+            width: 80%;
+        }
+    }
+}
+
+.contact {
+    margin-top: -150px;
+    h1,
+    li,
+    a {
+        color: white;
+    }
+    h1 {
+        @include Primaryfont;
+    }
+    @media #{$small-only} {
+        margin-top: 20px;
+        h1,
+        li,
+        a {
+            color: $oil;
+        }
+    }
+}
+
+.form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .button {
+        width: 25%;
+        font-size: 1.5em;
+        border: solid 2px #1d1d1d;
+        background-color: white;
+        color: #1d1d1d;
+    }
+    @media #{$small-only} {
+        margin-top: 0;
+        .button {
+            width: 100%;
+            font-size: 1em;
+        }
+    }
+}
+
+footer {
+    background-color: $oil;
+    padding-top: 25px;
+    padding-left: 200px;
+    padding-right: 200px;
+    @media #{$small-only} {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media #{$medium-only} {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    a {
+        color: white;
+    }
+    .fa-instagram,
+    .fa-vimeo,
+    .fa-envelope {
+        font-size: 2rem;
+    }
+}
